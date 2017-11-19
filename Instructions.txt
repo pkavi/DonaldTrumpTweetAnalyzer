@@ -1,0 +1,103 @@
+-Install postgresql
+
+-Set path of computer to bin folder of postgresql install
+
+-pg_ctl initdb -D [path of folder where you want to create PostGreSql cluster] -E UTF8
+
+
+
+-pg_ctl start -D [path of folder where you start PostGresql cluster]
+
+-createdb [database name] or use alterntive sql command
+
+-if previous step does not work, either another process on port or firewall or no admin priveleges
+-kill other process 
+
+-createdb [database name]
+
+ 
+
+for querying the db:
+
+-psql [database name] 
+- type \q then enter to exit psql DO NOT use standard escape procedure as this will shutdown server
+https://stackoverflow.com/questions/9463318/how-to-exit-from-postgresql-command-line-utility-psql
+
+
+
+Dependencies:
+Selenium
+Beautiful soup
+Pandas
+Psycopg
+Database schema
+
+DROP TABLE tweetsTable;
+Drop user mainuser;
+Create User mainuser;
+
+Select usename from pg_user;
+Create Table tweetsTable(
+tweetId Text,
+   accountName Text,
+    verified bool,
+    postTime timetz,
+    postDate date,
+    favorites int4,
+    retweets int4,
+    rawText text,
+    hashtagCollection text[],
+    emojiCollection text[],
+    emojiCodes text[],
+    atCollection text[],
+    linkCollection text[],
+    textFiltered text,
+    textFilteredNoHashtagsAts text,
+    Primary Key (tweetId)
+    
+    
+    
+
+);
+
+GRANT ALL PRIVILEGES ON TABLE tweetsTable TO mainuser;
+SET CLIENT_ENCODING TO 'utf8';
+
+https://www.postgresql.org/docs/10/static/tutorial-table.html
+
+https://www.postgresql.org/docs/9.5/static/datatype.html
+
+https://www.postgresql.org/docs/9.1/static/arrays.html
+
+https://www.postgresql.org/docs/8.1/static/ddl-constraints.html
+
+http://initd.org/psycopg/docs/usage.html
+
+https://stackoverflow.com/questions/22140542/postgresql-how-can-we-insert-only-time-and-date-into-a-variable-using-timestamp
+
+https://www.postgresql.org/docs/8.4/static/datatype-datetime.html
+
+https://www.postgresql.org/docs/8.0/static/user-manag.html
+
+https://stackoverflow.com/questions/15520361/permission-denied-for-relation
+
+
+https://stackoverflow.com/questions/4069718/postgres-insert-if-does-not-exist-already
+
+
+
+https://stackoverflow.com/questions/9942594/unicodeencodeerror-ascii-codec-cant-encode-character-u-xa0-in-position-20/20334767
+
+https://stackoverflow.com/questions/42130110/character-with-byte-sequence-0x9d-in-encoding-win1252-has-no-equivalent-in-enc
+
+https://www.postgresql.org/docs/9.3/static/multibyte.html
+
+https://stackoverflow.com/questions/2276200/changing-default-encoding-of-python
+
+https://serverfault.com/questions/224172/how-can-i-query-the-encoding-of-a-postgresql-cluster
+
+
+https://stackoverflow.com/questions/5090858/how-do-you-change-the-character-encoding-of-a-postgres-database
+
+
+https://stackoverflow.com/questions/7501714/plpgsql-array-indexing-start-at-1
