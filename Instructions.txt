@@ -23,6 +23,7 @@ for querying the db:
 - type \q then enter to exit psql DO NOT use standard escape procedure as this will shutdown server
 https://stackoverflow.com/questions/9463318/how-to-exit-from-postgresql-command-line-utility-psql
 
+for making sure console output works in eclipse 
 
 
 Dependencies:
@@ -30,6 +31,9 @@ Selenium
 Beautiful soup
 Pandas
 Psycopg
+
+
+
 Database schema
 
 DROP TABLE tweetsTable;
