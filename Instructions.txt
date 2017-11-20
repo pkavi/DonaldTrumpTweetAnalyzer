@@ -15,7 +15,7 @@
 
 -createdb [database name]
 
- 
+ ON Atreyas computer lc_messages,lc_monetary,lc_numeric_
 
 for querying the db:
 
