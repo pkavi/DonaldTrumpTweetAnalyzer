@@ -305,7 +305,7 @@ def searchLongRange(cur,conn,start=pd.to_datetime('2015-04-23'),end=pd.to_dateti
 conn = psycopg2.connect("dbname=tweets user=mainuser")
 cur = conn.cursor()
 #searchLongRange(cur,conn)
-searchLongRange(cur,conn,start=pd.to_datetime('2014-07-21'),end=pd.to_datetime('2014-07-29'))
+searchLongRange(cur,conn,start=pd.to_datetime('2016-11-12'),end=pd.to_datetime('2016-12-31'))
 conn.commit()
 cur.close()
 conn.close()
