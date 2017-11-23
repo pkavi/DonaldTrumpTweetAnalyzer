@@ -8,7 +8,7 @@
 
 -pg_ctl start -D [path of folder where you start PostGresql cluster]
 
--createdb [database name] or use alterntive sql command
+-createdb [database name] (only works when started)
 
 -if previous step does not work, either another process on port or firewall or no admin priveleges
 -kill other process 
@@ -26,11 +26,17 @@ https://stackoverflow.com/questions/9463318/how-to-exit-from-postgresql-command-
 for making sure console output works in eclipse 
 
 
+https://stackoverflow.com/questions/9353822/connecting-postgresql-with-sqlalchemy
+
+https://stackoverflow.com/questions/17156084/unpacking-a-sql-select-into-a-pandas-dataframe
+
+
 Dependencies:
 Selenium
 Beautiful soup
 Pandas
 Psycopg
+SqlAlchemy
 
 
 
@@ -66,6 +72,28 @@ tweetId Text,
 
 GRANT ALL PRIVILEGES ON TABLE tweetsTable TO mainuser;
 SET CLIENT_ENCODING TO 'utf8';
+
+
+
+Create Table followersTable(
+    date date,
+    followers int4,
+    
+
+    Primary Key (date)
+    
+    
+    
+
+);
+
+SET CLIENT_ENCODING TO 'utf8';
+
+
+
+select * from tweetstable where date_part('year', postdate)=2017 order by postdate desc ;
+
+
 
 https://www.postgresql.org/docs/10/static/tutorial-table.html
 
